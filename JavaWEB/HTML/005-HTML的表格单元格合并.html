@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格单元格合并</title>
+</head>
+<body>
+<!--
+  注意事项：
+    1、row合并的时候，删除"下面的"单元格
+    2、col合并的时候，删除左边的还是右边的都无所谓
+-->
+    <table border="1px" width="50%" align="center">
+        <tr>
+          <td colspan="2",rowspan="2">12ab</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td rowspan="2">cz</td>
+        </tr>
+        <tr>
+          <td colspan="2">xy</td>
+<!--          <td>y</td>   -->
+<!--          <td>z</td>   删下面的！！-->
+        </tr>
+    </table>
+</body>
+</html>

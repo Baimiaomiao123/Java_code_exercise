@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--通过工厂Bean：DateFactoryBean 来返回普通Bean:java.util.Date-->
+    <bean id="date" class="com.baimiaomiao.spring6.bean.DateFactoryBean">
+        <constructor-arg index="0" value="1980-10-11"/>
+    </bean>
+
+    <bean id="studentBean" class="com.baimiaomiao.spring6.bean.Student">
+        <property name="birth" ref="date"/>
+    </bean>
+
+
+
+    <!--这种方式只能获取系统当前时间，这种时间不能作为生日-->
+    <bean id="nowTime" class="java.util.Date"/>
+
+    <bean id="student" class="com.baimiaomiao.spring6.bean.Student">
+        <!--把日期类型当作简单类型-->
+        <!--<property name="birth" value="Mon Oct 10 14:30:26 CST 2022" />-->
+        <!--把日期类型当作非简单类型-->
+        <property name="birth" ref="nowTime"/>
+    </bean>
+
+    <!--spring提供的实例化方法，第一种：在spring配置文件中直接配置类全路径，spring会自动调用该类的无参数构造方法-->
+    <bean id="sb" class="com.baimiaomiao.spring6.bean.SpringBean" />
+
+    <!--spring提供的实例化方法，第二种：通过简单工厂模式，需要在spring配置文件中告诉框架，哪个类的哪个方法获取Bean-->
+    <!--factory-method属性指定的是工厂类当中的静态方法，也就是告诉Spring框架，调用这个方法可以获取Bean-->
+    <bean id="sf" class="com.baimiaomiao.spring6.bean.StarFactory" factory-method="get"/>
+
+    <!--spring提供的实例化方法，第三种：通过工厂方法模式，通过Factory-Bean属性+Factory-Method属性来完成-->
+    <!--告诉Spring方法调用哪个对象的哪个方法来获取bean-->
+    <bean id="gunFactory" class="com.baimiaomiao.spring6.bean.GunFactory" />
+    <!--以下的配置很关键，factory-bean属性告诉Spring调用哪个对象，factory-method告诉Spring该调用哪个方法-->
+    <bean id="gun" factory-bean="gunFactory" factory-method="getGun" />
+
+    <!--spring提供的实例化方法，第四种：通过FactoryBean接口来实现-->
+    <!--这种方式实际上就是第三种方式的简化-->
+    <!--由于你编写的类实现了FactoryBean接口，所以这个类是一个特殊的类，不需要你手动指定factory-method和factory-bean-->
+    <!--通过一个特殊的Bean：工厂Bean。来返回一个普通的Bean Person对象-->
+    <!--通过FactoryBean这个工厂Bean主要是想对普通Bean加工处理-->
+    <bean id="person" class="com.baimiaomiao.spring6.bean.PersonFactoryBean"/>
+
+</beans>

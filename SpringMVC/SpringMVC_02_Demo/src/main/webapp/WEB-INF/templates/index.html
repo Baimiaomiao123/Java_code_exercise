@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script type="text/javascript" th:src="@{/static/js/vue.js}"></script>
+    <script type="text/javascript" th:src="@{/static/js/axios.min.js}"></script>
+</head>
+<body>
+  <h1>index.html</h1>
+  <a th:href="@{/test/hello}">测试@RequestMapping注解所标识的位置</a> <br>
+  <a th:href="@{/test/abc}">测试@RequestMapping注解value属性</a> <br>
+  <form th:action="@{/test/hello}" method="post">
+      <input type="submit" value="测试@RequestMapping的method属性">
+  </form>
+  <a th:href="@{/test/hello?username=admin}">测试@RequestMapping注解params属性</a> <br>
+  <a th:href="@{/test/hello(username='admin')}">测试@RequestMapping注解params属性</a> <br>
+  <a th:href="@{/test/hello/ant}">测试@RequestMapping路径的ant风格</a> <br>
+  <a th:href="@{/test/rest/admin/1}">测试@RequestMapping注解的value属性中的占位符</a> <br>
+
+  <hr>
+
+  <form th:action="@{/param/pojo}" method="post">
+      用户名：<input type="text" name="username"> <br>
+      密码：<input type="password" name="password"> <br>
+      <input type="submit" value="Login"> <br>
+  </form>
+
+  <hr>
+
+  <a th:href="@{/scope/mav}">通过ModelAndView向请求域获取数据</a> <br>
+  <a th:href="@{/scope/model}">通过Model向请求域获取数据</a> <br>
+  <a th:href="@{/scope/modelMap}">通过ModelMap向请求域获取数据</a> <br>
+  <a th:href="@{/scope/map}">通过map向请求域获取数据</a> <br>
+  <a th:href="@{/scope/application}">向应用域中获取数据</a> <br>
+
+  <hr>
+
+  <form th:action="@{/testRequestBody}" method="post">
+      <input type="text" name="username"> <br>
+      <input type="text" name="password"> <br>
+      <input type="submit" value="测试RequestBody">
+  </form>
+  <form th:action="@{/testRequestEntity}" method="post">
+      <input type="text" name="username"> <br>
+      <input type="text" name="password"> <br>
+      <input type="submit" value="测试RequestEntity">
+  </form>
+  <a th:href="@{/testResponse}">通过servletAPI的response对象响应浏览器数据</a> <br>
+  <a th:href="@{/testResponseBody}">通过@ResponseBody响应到浏览器数据</a> <br>
+  <a th:href="@{/testResponseCustom}">通过@ResponseBody响应到浏览器Custom对象</a> <br>
+<div id="app">
+    <a @click="testAxios" th:href="@{/testAxios}">SpringMVC处理ajax请求</a>
+</div>
+  <script type="text/javascript">
+      new Vue({
+         el:"#app",
+         methods:{
+             testAxios:function (event) {
+                 axios({
+                     method:"post",
+                     url:event.target.href,
+                     params:{
+                         username:"admin",
+                         password:"123456"
+                     }
+                 }).then( response => {
+                     alert(response.data)
+                 })
+                 event.preventDefault();
+             }
+         }
+      });
+  </script>
+
+  <hr>
+
+  <a th:href="@{/testInterceptor}">测试拦截器</a> <br>
+  <a th:href="@{/testExceptionHandler}">测试异常处理</a> <br>
+</body>
+</html>

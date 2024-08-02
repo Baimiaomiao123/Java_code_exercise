@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace不能起别名，只能写全限定名-->
+<mapper namespace="com.baimiaomiao.mybatis.mapper.CarMapper">
+
+    <!--
+        useGeneratedKeys="true"——表示使用自动生成的主键值
+        keyProperty="id"——指定主键值赋值给对象的哪个属性（这个就表示就将自动生成的主键值赋值给Car对象的id属性）
+    -->
+    <insert id="insertCarUserGeneratedKeys" useGeneratedKeys="true" keyProperty="id">
+        insert into t_car values(null,#{carNum},#{brand},#{guidePrice},#{produceTime},#{carType})
+    </insert>
+
+    <select id="selectByBrandLike" resultType="Car">
+        select
+            id,
+            car_num as carNum,
+            brand,
+            guide_price as guidePrice,
+            produce_time as produceTime,
+            car_type as carType
+        from
+            t_car
+        where
+            <!--brand like '%#{brand}%' 不能使用该方式，因为预编译后?在''中，java不能找到-->
+            <!--第一种方式：brand like '%${brand}%'-->
+            <!--brand like concat('%',#{brand},'%')-->
+            <!--brand like concat('%','${brand}','%')-->
+            brand like "%"#{brand}"%"
+    </select>
+
+    <delete id="deleteBatch">
+        <!--delete from t_car where id in(#{ids})-->
+        delete from t_car where id in(${ids});
+    </delete>
+    
+    <select id="selectAllByAscOrDesc" resultType="Car">
+        select
+            id,
+            car_num as carNum,
+            brand,
+            guide_price as guidePrice,
+            produce_time as produceTime,
+            car_type as carType
+        from
+            t_car
+        order by
+            produce_time ${ascOrDesc}
+    </select>
+    
+    <select id="selectByCarType" resultType="Car">
+        select
+            id,
+            car_num as carNum,
+            brand,
+            guide_price as guidePrice,
+            produce_time as produceTime,
+            car_type as carType
+        from
+            t_car
+        where
+            car_type = #{carType}
+    </select>
+</mapper>

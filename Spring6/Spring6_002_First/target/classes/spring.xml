@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--这就是Spring的配置文件-->
+    <!--IDEA工具为我们提供了这个文件模版，一定要使用这个模版创建-->
+    <!--文件名不一定叫做spring，也可以叫做其他名字-->
+    <!--这个文件最好放在类的根路径中，方便移植-->
+    <!--配置bean，这样spring才可以帮助我们管理这个对象-->
+
+    <!--
+        bean标签的两个重要属性：
+            id：这个bean的身份证号，不能重复，是唯一标识
+            class：必须填写类的全路径，全限定类名（带包名）
+    -->
+    <bean id="userBean" class="com.baimiaomiao.spring6.bean.User" />
+
+    <!--配置其他的bean-->
+    <bean id="userDaoBean" class="com.baimiaomiao.spring6.dao.UserDaoImplForMySQL" />
+
+    <!--配置java.util.Date Bean-->
+    <bean id="nowTime" class="java.util.Date" />
+</beans>

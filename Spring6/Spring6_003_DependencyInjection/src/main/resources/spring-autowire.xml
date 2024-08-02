@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--根据类型自动装配-->
+    <!--也是基于set方法进行自动装配-->
+    <!--根据类型进行自动装配的时候，在有效的配置文件当中，某种类型的实例只能有一个-->
+    <bean class="com.baimiaomiao.spring6.dao.UserDao" />
+    <bean id="cs" class="com.baimiaomiao.spring6.service.CustomerService" autowire="byType"></bean>
+
+
+    <!--根据名字自动装配-->
+    <!--注意：自动装配也是基于set方式实现的-->
+    <bean id="orderService" class="com.baimiaomiao.spring6.service.OrderService" autowire="byName"/>
+
+    <!--id一般也叫做bean的名称-->
+    <!--id这里如果不是严格按照set方法的方法名去掉set，剩下首字母小写来写的话，就会导致空指针异常-->
+    <bean id="orderDao" class="com.baimiaomiao.spring6.dao.OrderDao"/>
+
+    <!--<bean id="orderService" class="com.baimiaomiao.spring6.service.OrderService" >
+        <property name="orderDao" ref="orderDao"/>
+    </bean>
+
+    <bean id="orderDao" class="com.baimiaomiao.spring6.dao.OrderDao"/>-->
+</beans>

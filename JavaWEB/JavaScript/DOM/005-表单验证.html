@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+    <!--
+    作业：表单验证
+      （1）用户名不能为空
+      （2）用户名必须在6-14位之间
+      （3）用户名只能有数字和字母组成，不能含有其他符号（正则表达式）
+      （4）密码和确认密码一致，邮箱地址合法
+      （5）统一失去焦点验证
+      （6）错误提示信息在span标签中提示，并且要求字体12号，红色
+      （7）文本框再次获得焦点后，清空错误提示信息，如果文本框中数据不合法要求清空文本框的value
+      （8）最终表单中所有项均合法方可提交
+    -->
+    <style type="text/css">
+    span{
+      color : red;
+      font-size : 12px;
+    }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      window.onload = function(){
+        //获取用户名文本框后面的span标签
+        var usernameErrorSpan = document.getElementById("usernameError");
+        //获取用户名文本框对象
+        var usernameElt = document.getElementById("username");
+
+        //给用户名文本框绑定blur事件
+        usernameElt.onblur = function(){
+          //获取用户名文本框内容，并清空文本框前后空白
+          username = usernameElt.value.trim();
+          //判断用户名是否为空
+          if(username === ""){
+            //用户名为空
+            //提示用户：用户名不能为空！
+            usernameErrorSpan.innerText = "用户名不能为空！";
+          }else{
+            //用户名不为空
+            //继续判断长度(6-14)
+            if(username.length < 6 || username.length >14){
+              //用户名长度非法
+              //提示用户：用户名长度必须在6-14位！
+              usernameErrorSpan.innerText = "用户名长度必须在6-14位！";
+            }else{
+               //用户名长度合法
+               //继续判断是否含有特殊符号
+               var regExp = /^[A-Za-z0-9]+$/;
+               if(!regExp.test(username)){
+                //用户名含有特殊符号
+                usernameErrorSpan.innerText = "用户名含有特殊符号！";
+               }
+            }
+          }
+        }
+
+        //给用户名文本框绑定focus事件
+        usernameElt.onfocus = function(){
+          //清空非法的用户名文本框中的内容
+          if(usernameErrorSpan.innerText != ""){
+            usernameElt.value = "";
+          }
+          //清空span标签
+          usernameErrorSpan.innerText = "";
+        }
+
+        //获取确认密码框文本框后面的span标签
+        var userpwd2ErrorSpan = document.getElementById("userpwdError");
+        //获取确认密码框文本框对象
+        var userpwd2Elt = document.getElementById("userpwd2");
+
+        //密码文本框绑定blur事件
+        userpwd2Elt.onblur = function(){
+          //获取密码和确认密码
+          var userpwdElt =document.getElementById("userpwd");
+          var userpwd = userpwdElt.value;
+          var userpwd2 = userpwd2Elt.value;
+          if(userpwd != userpwd2){
+            //密码不一致
+            userpwd2ErrorSpan.innerText = "密码不一致!";
+          }
+        }
+
+        //密码文本框绑定focus事件
+        userpwd2Elt.onfocus = function(){
+          //清空非法的密码文本框中的内容
+          if(userpwd2ErrorSpan.innerText != ""){
+            userpwd2Elt.value = "";
+          }
+          //清空span标签
+          userpwd2ErrorSpan.innerText = "";
+        }
+
+        //获取邮箱文本框后面的span标签
+        var emailErrorSpan = document.getElementById("emailError");
+        //获取邮箱文本框对象
+        var emailElt = document.getElementById("email");
+
+        //邮箱文本框绑定blur事件
+        emailElt.onblur = function(){
+          //获取email
+          var email = emailElt.value.trim();
+          //编写email的正则
+          var emailRegExp = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+          //判断邮箱写法是否合法
+          if(!emailRegExp.test(email)){
+            //email不合法
+            emailErrorSpan.innerText = "输入的email地址不合法！";
+          }
+        }
+
+        //邮箱文本框绑定focus事件
+        emailElt.onfocus = function(){
+          //清空非法的邮箱文本框中的内容
+          if(emailErrorSpan.innerText != ""){
+            emailElt.value = "";
+          }
+          //清空span标签
+          emailErrorSpan.innerText = "";
+        }
+
+        //给提交按钮绑定鼠标单击事件
+        var submitBtnElt = document.getElementById("submitbtn");
+        submitBtnElt.onclick = function(){
+          //触发username的blur，userpwd2的blur，email的blur
+          //不需要人工操作，使用纯JS代码触发事件
+          usernameElt.focus();
+          usernameElt.blur();
+
+          userpwd2Elt.focus();
+          userpwd2Elt.blur();
+
+          emailElt.focus();
+          emailElt.blur();
+
+
+          //当所有表单项都是合法的，提交表单
+          if(usernameErrorSpan.innerText == "" && userpwd2ErrorSpan.innerText == "" && emailErrorSpan.innerText == ""){
+            //提交表单：form的submit方法
+            var userFormElt = document.getElementById("userForm");
+            //可以在这里设置action，也可以不在这里设置
+            userFormElt.action = "http://localhost:8080/oa/save";
+            userFormElt.submit();
+          }
+        }
+      }
+    </script>
+    <!-- 这个表单提交应该使用post，这是为了检测，所以使用get   -->
+    <form action="http://localhost:8080/oa/save" method="get" id="userForm">
+      <table border="1px">
+        <tr>
+          <td>用户名</td>
+          <td><input type="text" name="username" id="username"/></td>
+          <td><span id="usernameError"></span></td>
+        </tr>
+        <tr>
+          <td>密码</td>
+          <td colspan="2"><input type="password" name="userpwd" id="userpwd"/></td>
+        <tr>
+        <tr>
+          <td>确认密码</td>
+          <td><input type="password" id="userpwd2"/></td>
+          <td><span id="userpwdError"></span><td>
+        </tr>
+        <tr>
+          <td>邮箱</td>
+          <td><input type="text" name="email" id="email"/></td>
+          <td><span id="emailError"></span><td>
+        </tr>
+        <tr>
+          <td colspan="3" align="center">
+            <input type="button" value="注册" id="submitbtn"/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="reset" value="重置"/>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

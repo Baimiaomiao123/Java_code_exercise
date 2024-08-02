@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="MyBatis07_Param" />
+        <module name="Spring6_012_AOPExample" />
+        <module name="Junit_Test" />
+        <module name="MyBatis02_CRUD" />
+        <module name="SpringMVC_03_Jsp" />
+        <module name="cloud-consumer-feign-hystrix-order80" />
+        <module name="Spring6_007_CircularDependency" />
+        <module name="ReviewAnnotation" />
+        <module name="cloud-consumerzk-order80" />
+        <module name="cloud-config-center-3344" />
+        <module name="Parse_xml_by_dom4j" />
+        <module name="Spring6_011_SpringAspectJAopXML" />
+        <module name="Spring6_001_Revelation" />
+        <module name="MyBatis11_Cache" />
+        <module name="Spring6_005_Instantiation" />
+        <module name="cloud-provider-hystrix-payment8001" />
+        <module name="MyBatis08_Select" />
+        <module name="DynamicProxyCglib" />
+        <module name="cloud-config-client-3366" />
+        <module name="FactoryMethod" />
+        <module name="ReivewReflect" />
+        <module name="GodBatisTest" />
+        <module name="MyBatis01_Introduction" />
+        <module name="Spring6_008_IocAnnotation" />
+        <module name="MyBatis04_Web" />
+        <module name="Spring6_010_SpringAspectJAopAnnotation" />
+        <module name="Spring6_003_DependencyInjection" />
+        <module name="MyBatis06_Antic" />
+        <module name="Spring6_002_First" />
+        <module name="DynamicProxyJdk" />
+        <module name="MyBatis05_CRUD2" />
+        <module name="cloud-gateway-gateway9527" />
+        <module name="GodBatis" />
+        <module name="Spring6_009_Jdbc" />
+        <module name="Spring6_014_TxBankXML" />
+        <module name="cloud-config-client-3355" />
+        <module name="MyBatis09_DynamicSql" />
+        <module name="Spring6_006_BeanLifeCycle" />
+        <module name="SpringMVC_01_HelloWorld" />
+        <module name="cloud-eureka-server7001" />
+        <module name="MyBatis03_Configuration" />
+        <module name="cloud-eureka-server7002" />
+        <module name="Spring6_013_TxBank" />
+        <module name="cloud-stream-rabbitmq-provider8801" />
+        <module name="Javassist_Test" />
+        <module name="cloud-consumerconsul-order80" />
+        <module name="SpringMVC_02_Demo" />
+        <module name="MyBatis15_Annotation" />
+        <module name="Spring6_004_Scope" />
+        <module name="Spring6_015_Junit" />
+        <module name="StaticProxy" />
+        <module name="SpringMVC_05_Annotation" />
+        <module name="cloud-consumer-feign-order80" />
+        <module name="cloud-providerconsul-payment8006" />
+        <module name="cloud-provider-payment8002" />
+        <module name="Spring6_016_SpringMybatis" />
+        <module name="cloud-provider-payment8004" />
+        <module name="cloud-provider-payment8001" />
+        <module name="SimpleFactory" />
+        <module name="cloud-consumer-hystrix-dashboard9001" />
+        <module name="MyBatis10_AdvancedMapping" />
+        <module name="SpringMVC_04_Rest" />
+        <module name="cloud-common-api" />
+        <module name="MySpring" />
+        <module name="MyBatis12_Generator01" />
+        <module name="MyBatis14_PageHelper" />
+        <module name="cloud-consumer-order80" />
+        <module name="MyBatis13_Generator02" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="19">
+      <module name="BOM" target="" />
+      <module name="code_exercise" target="" />
+      <module name="CSS" target="" />
+      <module name="DOM" target="" />
+      <module name="ECMAScript" target="" />
+      <module name="HTML" target="" />
+      <module name="JavaScript" target="" />
+      <module name="Javase_advance" target="" />
+      <module name="javase_base1" target="" />
+      <module name="JavaWEB" target="" />
+      <module name="JDBC" target="" />
+      <module name="JSON" target="" />
+      <module name="object_exercise" target="" />
+      <module name="Servlet" target="" />
+      <module name="SpringMVC" target="19" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

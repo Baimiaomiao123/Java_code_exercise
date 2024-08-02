@@ -1,0 +1,45 @@
+
+<!--
+    javascript脚本块在一个页面当中可以出现多次，没有要求
+    javascript脚本块出现位置也没有要求，随意
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<script type="text/javascript">
+        alert("first....");  //alter有阻塞当前页面加载作用。（阻挡，直到用户点击确定按钮）
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML中嵌入JS代码的第二种方式：script代码块</title>
+    <script type="text/javascript">
+        alert("second....");
+    </script>
+</head>
+<body>
+    <input type="button" value="我是一个按钮对象1" onclick="alert('白喵喵你好！')"/>
+    <!-- 第二种方式：脚本块的方式  -->
+    <script type="text/javascript">
+
+      /*
+            暴露在脚本块当中的程序，在页面打开的时候执行，
+            并且遵守自上而下的顺序依次逐行执行（这个代码的执行不需要事件）
+      */
+
+      //js代码的单行注释
+      /*
+      js代码的多行注释
+      */
+
+      window.alert("hello world!");
+      window.alert("hello javaScript!");
+    </script>
+
+    <input type="button" value="我是一个按钮对象2" onclick="alert('白喵喵再见！')"/>
+</body>
+</html>
+
+<script type="text/javascript">
+        alert("last....");
+</script>

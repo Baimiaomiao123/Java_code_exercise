@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax3</title>
+</head>
+<body>
+<script type="text/javascript">
+    //以下代码也可以，但是不常用
+  //创建AJAX核心对象
+  var xhr = new XMLHttpRequest();
+
+  window.onload = function () {
+    document.getElementById("btn").onclick = function(){
+      //注册回调函数
+      xhr.onreadystatechange = callback
+      //开启通道
+      xhr.open("GET","/ajax01/request2",true);
+      //发送请求
+      xhr.send();
+    }
+    
+    function callback() {
+      if(xhr.readyState == 4){
+        if (xhr.status ==200){
+          document.getElementById("myspan").innerHTML = xhr.responseText;
+        }else{
+          alert(xhr.status)
+        }
+      }
+    }
+  }
+</script>
+<button id="btn">发送ajax get请求</button>
+<span id="myspan"></span>
+</body>
+</html>

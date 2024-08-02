@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        目前来说：scope属性有两个值：
+            prototype：多例（原型）
+            singleton：单例（默认）
+        其实scope属性有多个值，例如
+            session：一次请求当中一个bean
+            request：一次会话当中一个bean
+            但是必须是一个web项目，当引入springwebmvc的时候才能选择
+    -->
+    <bean id="springBean" class="com.baimiaomiao.spring6.bean.SpringBean" scope="prototype">
+
+    </bean>
+
+</beans>

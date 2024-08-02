@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>关于JS代码的执行顺序</title>
+  </head>
+  <!-- load事件什么时候发生？ 页面全部元素加载完毕之后才会发生 -->
+  <body>
+    <script type="text/javascript">
+      /*
+      //第一步：根据id获取节点对象
+      var btn = document.getElementById("btn"); //返回null（因为代码执行到此处的时候id="btn"的元素还没有加载到内存）
+      //第二步：给节点对象指定事件
+      btn.onclick = function(){
+        alert("hello js");
+      }
+      */
+      /*
+      window.onload = ready;
+      function ready(){
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+          alert("hello js");
+        }
+      }
+      */
+      //以上也可以这样写
+      //页面加载的过程中，将a函数注册给了load事件
+      //页面加载完毕之后，load事件发生了，此时执行回调函数a
+      //回调函数a执行的过程中，把b函数注册给了id="btn"的click事件
+      //当id="btn"的节点发生click事件之后，b函数被调用并执行
+      window.onload = function(){ //第一个回调函数a——在页面加载完毕之后执行（打开页面时就会注册）
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){ //第二个回调函数b——在鼠标单击事件发生之后执行（打开页面时就会注册）
+          alert("hello js");
+        }
+      }
+    </script>
+    <input type="button" value="hello" id="btn" />
+  </body>
+</html>

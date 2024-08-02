@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="xxxx" class="com.baimiaomiao.spring6.dao.UserDao" />
+    <bean id="customerServiceBean" class="com.baimiaomiao.spring6.service.CustomerService">
+        <!--构造注入-->
+        <!--
+            index属性：指定参数下标
+            ref属性：指定注入的bean的id
+        -->
+        <!--指定构造方法的第一个参数，下标是0-->
+        <constructor-arg index="0" ref="xxxx" />
+        <!--还可以指定第二个参数，下标则是1，依次类推-->
+        <!--index没有顺序要求，只要能正确对应即可-->
+    </bean>
+
+    <!--还可以这样配：根据构造方法参数的名字进行注入，同样name的顺序也没有要求-->
+    <bean id="csBean" class="com.baimiaomiao.spring6.service.CustomerService">
+        <constructor-arg name="userDao" ref="xxxx" />
+    </bean>
+
+    <!--不指定下标，也不指定参数名-->
+    <!--这种方式实际上是根据类型来进行注入的，spring会自动根据类型来判断把ref注入给谁-->
+    <bean id="csBean2" class="com.baimiaomiao.spring6.service.CustomerService">
+        <constructor-arg ref="xxxx" />
+    </bean>
+
+</beans>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AJAX/AJAX.iml" filepath="$PROJECT_DIR$/AJAX/AJAX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AJAX/AJAX01/AJAX01.iml" filepath="$PROJECT_DIR$/AJAX/AJAX01/AJAX01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AJAX/AJAX02/AJAX02.iml" filepath="$PROJECT_DIR$/AJAX/AJAX02/AJAX02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BOM.iml" filepath="$PROJECT_DIR$/BOM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CSS.iml" filepath="$PROJECT_DIR$/CSS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DOM.iml" filepath="$PROJECT_DIR$/DOM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataStructAndAlgorithm/DataStructAndAlgorithm.iml" filepath="$PROJECT_DIR$/DataStructAndAlgorithm/DataStructAndAlgorithm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ECMAScript.iml" filepath="$PROJECT_DIR$/ECMAScript.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HTML.iml" filepath="$PROJECT_DIR$/HTML.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JDBC/JDBC.iml" filepath="$PROJECT_DIR$/JDBC/JDBC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JSON.iml" filepath="$PROJECT_DIR$/JSON.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/JSP/JSP.iml" filepath="$PROJECT_DIR$/JavaWEB/JSP/JSP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/JSP/JSP01/JSP01.iml" filepath="$PROJECT_DIR$/JavaWEB/JSP/JSP01/JSP01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaScript.iml" filepath="$PROJECT_DIR$/JavaScript.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/JavaWEB.iml" filepath="$PROJECT_DIR$/JavaWEB/JavaWEB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Javase_advance/Javase_advance.iml" filepath="$PROJECT_DIR$/Javase_advance/Javase_advance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mybatis/Mybatis.iml" filepath="$PROJECT_DIR$/Mybatis/Mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Project1/Project1.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Project1/Project1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Project2/Project2.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Project2/Project2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Project3/Project3.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Project3/Project3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Servlet.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Servlet01/Servlet01.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Servlet01/Servlet01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Servlet02/Servlet02.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Servlet02/Servlet02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Servlet03/Servlet03.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Servlet03/Servlet03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Servlet04/Servlet04.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Servlet04/Servlet04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Servlet05/Servlet05.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Servlet05/Servlet05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Servlet06/Servlet06.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Servlet06/Servlet06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Servlet07/Servlet07.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Servlet07/Servlet07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Servlet08/Servlet08.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Servlet08/Servlet08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Servlet09/Servlet09.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Servlet09/Servlet09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Servlet10/Servlet10.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Servlet10/Servlet10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Servlet11/Servlet11.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Servlet11/Servlet11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Servlet12/Servlet12.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Servlet12/Servlet12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Servlet13/Servlet13.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Servlet13/Servlet13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Servlet14/Servlet14.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Servlet14/Servlet14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Servlet15/Servlet15.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Servlet15/Servlet15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring6/Spring6.iml" filepath="$PROJECT_DIR$/Spring6/Spring6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC/SpringMVC.iml" filepath="$PROJECT_DIR$/SpringMVC/SpringMVC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC_01_HelloWorld.iml" filepath="$PROJECT_DIR$/SpringMVC_01_HelloWorld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC_02_Demo.iml" filepath="$PROJECT_DIR$/SpringMVC_02_Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC_03_Jsp.iml" filepath="$PROJECT_DIR$/SpringMVC_03_Jsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC_04_Rest.iml" filepath="$PROJECT_DIR$/SpringMVC_04_Rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWEB/Servlet/Template/Template.iml" filepath="$PROJECT_DIR$/JavaWEB/Servlet/Template/Template.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AJAX/a/a.iml" filepath="$PROJECT_DIR$/AJAX/a/a.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AJAX/b/b.iml" filepath="$PROJECT_DIR$/AJAX/b/b.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/code_exercise.iml" filepath="$PROJECT_DIR$/.idea/code_exercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AJAX/fastjson/fastjson.iml" filepath="$PROJECT_DIR$/AJAX/fastjson/fastjson.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AJAX/httpclient/httpclient.iml" filepath="$PROJECT_DIR$/AJAX/httpclient/httpclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase_base/src/javase_base1.iml" filepath="$PROJECT_DIR$/javase_base/src/javase_base1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jQuery/jquery-project/jquery-project.iml" filepath="$PROJECT_DIR$/jQuery/jquery-project/jquery-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase_base/src/object_exercise/object_exercise.iml" filepath="$PROJECT_DIR$/javase_base/src/object_exercise/object_exercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AJAX/old_request/old_request.iml" filepath="$PROJECT_DIR$/AJAX/old_request/old_request.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jQuery/queryInfo/queryInfo.iml" filepath="$PROJECT_DIR$/jQuery/queryInfo/queryInfo.iml" />
+    </modules>
+  </component>
+</project>

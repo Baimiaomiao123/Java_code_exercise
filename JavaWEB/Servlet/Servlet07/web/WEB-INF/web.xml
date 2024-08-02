@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+<!--  设置欢迎页面的时候，这个路径不需要以"/"开始，并且这个路径默认是从webapp的根下开始查找  -->
+<!--    <welcome-file-list>-->
+<!--        <welcome-file>login.html</welcome-file>-->
+<!--    </welcome-file-list>-->
+
+<!--  如果在webapp的根下新建一个目录，目录中再给一个文件，那么这个欢迎页面如何设置呢？  -->
+<!--  在webapp根下设置page1，page1下新建page2，page2下新建page.html文件  -->
+<!--  注意：路径仍不需要以"/"开始，并且路径默认从webapp的根下开始找  -->
+<!--  还可以设置多个欢迎页面，越靠上的优先级越高，找不到就往下，所有的欢迎页都找不到就会报404错误  -->
+<!--    <welcome-file-list>-->
+<!--        <welcome-file>page1/page2/page.html</welcome-file>-->
+<!--        <welcome-file>login.html</welcome-file>-->
+<!--    </welcome-file-list>-->
+
+<!--  当没有在web.xml中设置欢迎页面的时候，如果在web的根下新建一个index.html，这个页面自动就会保存为欢迎页面  -->
+
+<!--  实际上有两个可以配置的地方：
+        1、一个是在webapp内部的web.xml文件中。（局部配置）
+        2、一个是在CATALINA_HOME/conf/web.xml文件中配置。（全局配置）
+        注意原则：局部优先（优先原则）
+        Tomcat的全局欢迎页面：index.html；index.htm；index.jsp。如果你一个web站点没有设置局部的
+        欢迎页面，服务器就会以index.html；index.htm；index.jsp作为欢迎页面
+-->
+
+<!--  也可以使用一个Servlet作为欢迎页面  -->
+    <welcome-file-list>
+        <welcome-file>welcome</welcome-file>
+    </welcome-file-list>
+    
+    <servlet>
+        <servlet-name>welcomeServlet</servlet-name>
+        <servlet-class>servlet.WelcomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>welcomeServlet</servlet-name>
+        <url-pattern>/welcome</url-pattern>
+    </servlet-mapping>
+</web-app>

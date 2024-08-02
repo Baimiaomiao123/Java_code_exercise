@@ -1,0 +1,37 @@
+package com.baimiaomiao.mybatis.mapper;
+
+
+import com.baimiaomiao.mybatis.pojo.Car;
+import org.apache.ibatis.annotations.*;
+
+/**
+ * @author baimiaomiao
+ * @version 1.0
+ * @className CarMapper
+ * @since 1.0
+ */
+
+
+public interface CarMapper {
+
+    @Insert("insert into t_car values(null,#{carNum},#{brand},#{guidePrice},#{produceTime},#{carType})")
+    int insert(Car car);
+
+    @Delete("delete from t_car where id = #{id}")
+    int deleteById(Long id);
+
+    @Update("update t_car set car_num=#{carNum},brand=#{brand},guide_price=#{guidePrice},produce_time=#{produceTime},car_type=#{carType} where id = #{id}")
+    int update(Car car);
+
+    @Select("select * from t_car where id = #{id}")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "carNum", column = "car_num"),
+            @Result(property = "brand", column = "brand"),
+            @Result(property = "guidePrice", column = "guide_price"),
+            @Result(property = "produceTime", column = "produce_time"),
+            @Result(property = "carType", column = "car_type")
+    })
+    Car selectById(Long id);
+
+}

@@ -1,0 +1,13 @@
+a{
+
+    text-decoration : none ; /*去掉下划线*/
+
+}
+
+/*
+    cursor是鼠标样式。pointer是小手，hand也是，但是hand有浏览器兼容问题
+*/
+#baiduSpan {
+    text-decoration : underline;
+    cursor : pointer;
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <!--查看部门列表-->
+    <servlet>
+        <servlet-name>listDept</servlet-name>
+        <servlet-class>oa.web.action.DeptListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>listDept</servlet-name>
+        <url-pattern>/dept/list</url-pattern>
+    </servlet-mapping>
+
+    <!--查看部门详细信息-->
+    <servlet>
+        <servlet-name>detail</servlet-name>
+        <servlet-class>oa.web.action.DeptDetailServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>detail</servlet-name>
+        <url-pattern>/dept/detail</url-pattern>
+    </servlet-mapping>
+
+    <!--删除部门-->
+    <servlet>
+        <servlet-name>delete</servlet-name>
+        <servlet-class>oa.web.action.DeptDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/dept/delete</url-pattern>
+    </servlet-mapping>
+
+    <!--增加部门-->
+    <servlet>
+        <servlet-name>addDept</servlet-name>
+        <servlet-class>oa.web.action.DeptAddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addDept</servlet-name>
+        <url-pattern>/dept/add</url-pattern>
+    </servlet-mapping>
+
+    <!--修改部门-->
+    <servlet>
+        <servlet-name>editDept</servlet-name>
+        <servlet-class>oa.web.action.DeptEditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>editDept</servlet-name>
+        <url-pattern>/dept/edit</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>updateDept</servlet-name>
+        <servlet-class>oa.web.action.DeptUpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updateDept</servlet-name>
+        <url-pattern>/dept/update</url-pattern>
+    </servlet-mapping>
+</web-app>

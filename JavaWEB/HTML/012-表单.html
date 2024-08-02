@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单form</title>
+</head>
+<body>
+    <!--
+        1、表单有什么用？
+          收集用户信息，表单展现之后，用户填写表单，点击提交按钮提交数据给服务器
+        2、怎么画一个表单
+          使用form标签
+        3、一个网页当中可以有多个表单form
+        4、表单最终是需要提交数据给服务器的，form标签又一个action属性。这个属性用来指定服务器地址
+          action属性用来指定数据提交给哪个服务器
+          action属性和超链接中的href属性一样。都可以向服务器发送请求(request)
+
+    -->
+    <form action="http://www.baidu.com">
+      <!--  画一个提交按钮，这按钮可以提交表单   -->
+      <!--  画按钮可以使用input输入域，type="submit"的时候表示该按钮是一个提交按钮，具有提交表单的能力    -->
+      <!--  这个按钮和普通的超链接没有什么太大的区别，超链接和表单都能向服务器发送请求，只不过表单携带有数据      -->
+      <!--  value属性用来设置按钮上显示的文本，默认显示为"提交"    -->
+      <input type = "submit" value="百度"/>
+      <br><br><br>
+      <!--  type="button"表示这是一个普通按钮，不具备提交表单的能力    -->
+      <input type = "button" value="设置按钮上显示的文本"/>
+        <br><br><br>
+        用户名:<input type="text"/><br>
+        密码:&nbsp;&nbsp;&nbsp;&nbsp;<input type="password"/><br>
+        <input type="submit" value="登陆" />
+    </form>
+
+    <hr>
+    <hr>
+
+    <!--
+        表单是以什么格式提交到服务器的？
+            http://localhost:8080/jd/login?username=1234&password=1234
+            格式：action?name=vale&name=value&name=value&name=value....
+            http协议规定的，必须以这种格式提交给服务器
+
+        重点强调：表单项有name属性一律会提交给服务器，不想提交一律不写name属性
+
+        文本框和密码框的value不需要程序员指定，用户输入什么value就是什么
+
+        当name没有写的时候，该项不会提交给服务器
+        但是当value没有写的时候，value的默认值是空字符串""，会将空字符串提交给服务器
+    -->
+    <form action="http://localhost:8080/jd/login">
+        <table border="1px">
+            <tr>
+                <td>用户名</td>
+                <td><input type="text" name="username"/></td>  <!-- 这里的text或者password就相当于value -->
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td><input type="password" name="password"/></td>
+            </tr>
+            <tr align="center">
+                <td colspan="2">
+                    <input type="submit" value="登陆">
+
+                    <input type="button" value="清空">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

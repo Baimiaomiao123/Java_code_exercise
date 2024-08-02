@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="a:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/a_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="a" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/../jar/httpcore-4.4.13.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../jar/httpclient-4.5.13.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../jar/commons-logging-1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../jar/commons-lang3-3.12.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../jar/commons-collections4-4.4.jar" />
+          <element id="library" level="application" name="TomcatLib" />
+          <element id="library" level="application" name="mysql-connector-j-8.0.32" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="a/web/Web" />
+    </root>
+  </artifact>
+</component>

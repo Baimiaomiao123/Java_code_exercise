@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>关于JS中的变量</title>
+</head>
+<body>
+      <script type="text/javascript">
+          /*
+            回顾java中的变量：
+              1、java中怎么定义/声明变量？
+                数据类型 变量名;
+                例如：
+                  int i;
+                  double d;
+                  boolean flag;
+
+              2、java中的变量怎么赋值呢？
+                使用"="运算符进行赋值。"="运算符右边先执行，将右边执行的结果赋值给左边的变量
+                变量名 = 变量值;
+                例如：
+                  i = 10;
+                  d = 3.14;
+                  flag = false;
+
+              3、java语言是一种强类型语言，强类型怎么理解？
+                java语言存在编译阶段，假设代码 int i;
+                那么在java中有一个特点是：java程序编译阶段就已经确定了
+                i变量的数据类型，该i变量的数据类型在编译阶段就是int类型
+                那么这个变量到最终内存释放，一直都是int，不可能变成
+                其它类型
+                  byte short int long float double boolean char
+                    1     2    4   8    4     8       1     2
+
+                  java中要求变量声明的时候是什么类型，以后永远都是这种类型，不可变。编译期强行固定变量的数据类型
+
+              4、javascript当中的变量？
+                怎么声明变量？
+                  var 变量名;
+                怎么给变量赋值
+                  变量名 = 值;
+                javascript是一种弱类型语言，没有编译阶段，一个变量可以随意赋值，赋什么类型的值都行
+                  var i = 100;
+                  i = "abc";
+                  i = false;
+                  i = 3.1415926
+          */
+          //在JS当中，一个变量没有赋值，默认为undefined
+          var i;
+          //undefined 在JS中是一个具体存在值
+          alert("i = " + i)
+          alert(undefined)
+          var k = undefined;
+          alert("k = " + k)
+
+         //一个变量没有声明/定义，直接访问？
+         //alert(age);  //语法错误：ReferenceError: Can't find variable: age
+
+          var a,b,c=200;
+          alert("a = " + a) //a = undefined
+          alert("b = " + b) //b = undefined
+          alert("c = " + c) //c = 200
+
+          a = false;
+          a = 123;
+          a = "abc";
+
+      </script>
+
+</body>
+</html>

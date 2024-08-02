@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--
+        第一种解决方案：
+            use-default-filters="false"
+            如果这个属性是false，表示com.baimiaomiao.spring6.bean2包下所有的带有声明Bean的注解全部失效
+    -->
+    <!--<context:component-scan base-package="com.baimiaomiao.spring6.bean2" use-default-filters="false">
+        &lt;!&ndash;只有以下的注解才能够被包含进来并执行&ndash;&gt;
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>-->
+
+
+    <!--
+        第二种解决方案：
+           use-default-filters="true"（默认，可以不写）
+           如果这个属性是true，表示com.baimiaomiao.spring6.bean2包下所有的带有声明Bean的注解全部生效
+    -->
+    <context:component-scan base-package="com.baimiaomiao.spring6.bean2" >
+        <!--只有以下的注解不能够被包含进来，其他的注解都可以被包含并执行-->
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+</beans>

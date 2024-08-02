@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery的jsonp封装解决ajax跨域问题</title>
+</head>
+<body>
+<!--引入jQuery库-->
+<script type="text/javascript" src="/a/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+  //这个函数不需要你写，jQuery可以自动帮助你生成
+  //function jQuery35102128676141922644_1681275896409&_=1681275896410(json){} 这个函数会默认调用sucess的回调函数
+
+  function sayHello(data) {
+      $("#mydiv").html("欢迎你，" + data.username);
+  }
+
+  $(function () {
+    $("#btn").click(function () {
+      //发送所谓的ajax请求，其实本质上并不是一个ajax请求，只是披着ajax的皮乔装大打扮的
+      $.ajax({
+          type : "GET", //jsonp格式只支持get请求
+          //虽然url是这样写的，但是实际上发送的是：
+          //http://localhost:8080/b/jsonp3?callback=jQuery35102128676141922644_1681275896409&_=1681275896410
+          //callback就是之前的fun
+          //jQuery35102128676141922644_1681275896409&_=1681275896410就是之前的sayHello，而这个名字就是jQuery自动为我们生成的
+          url : "http://localhost:8080/b/jsonp3",
+          dataType : "jsonp", //指定数据类型是jsonp格式（最关键的是它）
+          jsonp : "fun", //不采用默认的参数名callback，用这个属性来指定具体的参数名
+          jsonpCallback : "sayHello" //不采用默认的回调函数，用这个属性来指定具体的回调函数
+          /*success : function (data) {  //data变量用来接受服务器端的响应
+            $("#mydiv").html("欢迎你，" + data.username);
+          }*/
+          }
+      )
+    })
+  })
+</script>
+
+<button id="btn">jQuery库封装的json</button> <br>
+
+<div id="mydiv"></div>
+
+</body>
+</html>

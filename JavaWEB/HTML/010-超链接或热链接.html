@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>超链接或热链接</title>
+</head>
+<body>
+    <!--
+          超链接的作用：
+              有下划线
+              鼠标停留在超链接上面显示小手形状
+              点击超链接之后还能跳转页面
+     -->
+    <a href="http://www.baidu.com">百度</a>
+    <a href="http://news.baidu.com">百度新闻</a>
+    <a href="http://www.jd.com">京东商城</a>
+    <a href="http://www.tmall.com">天猫</a>
+    <a href="http://www.126.com">126邮箱</a>
+
+    <br><br><br>
+    <!--
+        href： hot reference 热引用
+        href属性后面一定是一个资源的地址
+
+        href后面的路径可以是绝对路径也可以是相对路径，可以是网络中某个资源的路径，也可以是html
+     -->
+    <a href="008-背景颜色和背景图片.html">008</a>
+
+    <br><br><br>
+
+    <!-- 图片超链接 -->
+    <a href="http://www.hao123.com">
+      <img src="hao123.png" width="100px">
+    </a>
+
+    <!--
+        超链接有一个target属性：
+            可取值：
+                _blank：新窗口
+                _self：当前窗口
+                _top：顶窗口
+                _parent：父窗口
+    -->
+    <a href="http://www.hao123.com">
+        <img src="hao123.png" width="100px">
+    </a>
+
+</body>
+</html>
+
+<!--
+    超链接的作用：
+        通过超链接可以从浏览器向服务器发送请求
+        浏览器向服务器发送数据——request
+        服务器向浏览器发送数据——response
+
+        B/S结构的系统，每一个请求都会对应一个响应。
+
+        B-请求->S
+        s-响应->B
+
+    用户点击超链接和用户在浏览器地址栏上直接输入URL，有什么区别？
+        本质上没有区别，都是想服务器发送请求
+        从操作上来讲，超链接使用更方便
+
+-->
+

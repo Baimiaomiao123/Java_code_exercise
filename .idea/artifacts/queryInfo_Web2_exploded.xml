@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="queryInfo:Web2 exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/queryInfo_Web2_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="queryInfo" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="queryInfo/web/Web2" />
+    </root>
+  </artifact>
+</component>

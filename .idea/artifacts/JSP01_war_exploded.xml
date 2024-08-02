@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="JSP01:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/JSP01_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="JSP01" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/../jar/taglibs-standard-impl-1.2.5.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../jar/taglibs-standard-jstlel-1.2.5.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../jar/taglibs-standard-spec-1.2.5.jar" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="JSP01/web/Web" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="mathBean" class="com.baimiaomiao.spring6.bean.MathBean">
+        <!--第一种方案：使用实体符号代替特殊符号-->
+        <!--<property name="result" value="2 &lt; 3" />-->
+
+        <!--第二种方案：使用<![CDATA[]]>-->
+        <property name="result">
+            <!--只能使用value标签-->
+            <value><![CDATA[2 < 3]]></value>
+        </property>
+    </bean>
+
+    <bean id="catBean" class="com.baimiaomiao.spring6.bean.Cat">
+        <!--<property name="name" value="tom" />-->
+        <!--不给属性注入，属性的默认值为"null"-->
+        <!--但是这不是注入null，只是注入了一个"null"字符串，即不给属性注入会类似执行以下代码-->
+        <!--<property name="name" value="null" />-->
+
+        <!--如果想要注入null，以下的方式是手动注入null-->
+        <!--<property name="name">
+            <null />
+        </property>-->
+
+        <!--注入空字符串-->
+        <!--<property name="name" value=""/>-->
+        <!--<property name="name">
+            <value/>
+        </property>-->
+        <property name="age" value="3" />
+    </bean>
+
+    <!--让spring来管理数据源-->
+    <bean id="myDataSource" class="com.baimiaomiao.spring6.jdbc.MyDataSource">
+        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/test"/>
+        <property name="username" value="root"/>
+        <property name="password" value="mp102030.."/>
+    </bean>
+
+
+    <!--测试哪些类型是简单类型-->
+    <bean id="svtBean" class="com.baimiaomiao.spring6.bean.SimpleValueType">
+        <property name="age" value="20" />
+        <property name="age2" value="20" />
+        <property name="username" value="zhangsan" />
+        <property name="season" value="SUMMER" />
+        <property name="clazz" value="java.lang.String" />
+        <property name="c" value="男" />
+        <property name="c2" value="女" />
+        <property name="flag" value="true" />
+        <property name="flag2" value="false" />
+        <!--报错了，说1970-01-01这个字符串无法转换成java.util.Date-->
+        <!--<property name="birth" value="1970-01-01" />-->
+        <!--如果硬要把Date当作简单类型，使用value赋值的话，这个日期字符串格式有要求-->
+        <!--在实际开发中，一般不会把Date当作简单类型，虽然它是简单类型，一般会采用ref给Date类型的属性赋值-->
+        <property name="birth" value="Tue May 02 14:05:40 CST 2023" />
+    </bean>
+
+    <!--注入简单类型-->
+    <bean id="userBean" class="com.baimiaomiao.spring6.bean.User">
+        <!--重点：如果是给简单类型赋值，就不能使用ref了，就需要使用value了-->
+        <property name="username" value="zhangsan" />
+        <property name="password" value="123" />
+        <property name="age" value="20" />
+    </bean>
+
+
+    <!--定义/声明Bean-->
+    <bean id="orderDaoBean" class="com.baimiaomiao.spring6.dao.OrderDao"/>
+
+    <bean id="orderServiceBean" class="com.baimiaomiao.spring6.service.OrderService">
+        <!--使用ref属性来引入，注入外部Bean-->
+        <property name="orderDao" ref="orderDaoBean" />
+    </bean>
+
+    <bean id="orderServiceBean2" class="com.baimiaomiao.spring6.service.OrderService">
+        <property name="orderDao">
+            <!--在property标签中使用嵌套的bean标签，这就是内部Bean-->
+            <bean class="com.baimiaomiao.spring6.dao.OrderDao"/>
+        </property>
+    </bean>
+
+</beans>

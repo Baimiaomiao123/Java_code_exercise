@@ -1,0 +1,10 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-consumer-order
+  cloud:
+    zookeeper:
+      connect-string: 127.0.0.1:2181 #单机版
+      #如果是集群的话，需要将connect-string指向别的zookeeper地址即可，原理类似于eureka

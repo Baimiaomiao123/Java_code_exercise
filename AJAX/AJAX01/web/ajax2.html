@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发送ajax get请求</title>
+</head>
+<body>
+<script type="text/javascript">
+  window.onload = function () {
+    document.getElementById("btn").onclick = function(){
+      //创建AJAX核心对象
+      var xhr = new XMLHttpRequest();
+      //注册回调函数
+      xhr.onreadystatechange = function () {
+        if(this.readyState == 4){
+          if (this.status == 200) {
+            document.getElementById("myspan").innerHTML = this.responseText;
+          } else{
+            alert(this.status)
+          }
+        }
+      }
+      //开启通道
+      //获取到用户的填写的usercode和username
+      var usercode = document.getElementById("usercode").value
+      var username = document.getElementById("username").value
+      //如果遇到低版本的IE浏览器，还可以在请求中一个时间戳或者随机数或者随机数+时间戳，防止走浏览器缓存
+      // xhr.open("GET","/ajax01/request2?t=" + new Date().getTime() + "&usercode=" + usercode + "&username=" + username,true);
+      //但是目前的浏览器已经解决了这个问题，不需要再额外加一个时间戳
+      xhr.open("GET","/ajax01/request2?usercode=" + usercode + "&username=" + username,true);
+      //发送请求
+      xhr.send();
+    }
+  }
+</script>
+usercode<input type="text" id="usercode"> <br>
+username<input type="text" id="username"> <br>
+  <button id="btn">发送ajax get请求</button> <br>
+  <span id="myspan"></span>
+</body>
+</html>

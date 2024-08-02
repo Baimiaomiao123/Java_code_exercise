@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/Mybatis/MyBatis04_Web" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/MyBatis/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/Mybatis01/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/Junit_Test/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MyBatis02_CRUD/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MyBatis03_Configuration/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/Parse_xml_by_dom4j/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/GodBatis/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/GodBatisTest/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MyBatis004_Web/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MyBatis04_Web/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/Mybatis01_Introduction/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/Javassist_Test/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MyBatis05_CRUD2/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MyBatis06_Antic/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MyBatis07_Param/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MyBatis08_Select/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MyBatis09_DynamicSql/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MyBatis09_AdvancedMapping/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MyBatis10_AdvancedMapping/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MyBatis11_Cache/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/Mybatis12_Generator01/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/Spring6_001_Revelation/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/Spring6_002_First/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/Spring6_003_DependencyInjection/pom.xml" />
+        <option value="$PROJECT_DIR$/jQuery/MyBatis13_Generator02/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MyBatis13_Generator02/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MyBatis14_PageHelper/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/MyBatis15_Annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/Spring6_004_Scope/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/SimpleFactory/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/FactoryMethod/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/Spring6_005_Instantiation/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/Spring6_006_BeanLifeCycle/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/Spring6_007_CircularDependency/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/ReivewReflect/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/MySpring/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/ReviewAnnotation/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/Spring6_008_IocAnnotation/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/Spring6_009_Jdbc/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/StaticProxy/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/DynamicProxyJdk/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/DynamicProxyCglib/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/Spring6_010_SpringAspectJAopAnnotation/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/Spring6_011_SpringAspectJAopXML/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/Spring6_012_AOPExample/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/Spring6_013_TxBank/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/Spring6_014_TxBankXML/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/Spring6_015_Junit/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring6/Spring6_016_SpringMybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_01_QuickStart/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_01_HelloWorld/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_02_Demo/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_03_Jsp/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_04_Rest/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_05_Annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringCloud2020/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Spring6/Spring6_004_Scope/Spring6_005_instantiation/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_01_QuickStart/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="openjdk-19" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

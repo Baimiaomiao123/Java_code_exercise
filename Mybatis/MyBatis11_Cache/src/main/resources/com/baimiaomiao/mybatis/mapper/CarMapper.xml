@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.baimiaomiao.mybatis.mapper.CarMapper">
+
+    <!--
+        默认情况下，二级缓存机制是开启的
+        只需要在对应的SqlMapper.xml文件中添加以下标签。用来表示"我"使用该二级缓存
+    -->
+    <!--
+        cache标签的属性：
+            1.eviction：指定从缓存中移除某个对象的淘汰算法，默认采用LRU策略。
+                a.LRU：Least Recently Used。最近最少使用。优先淘汰在间隔时间内使用频率最低的对象。（其实还有一种淘汰算法LFU，不常用）
+                b.FIFO：First In First Out。一种先进先出的数据缓存器。先进入二级缓存的对象最先被淘汰
+                c.SOFT：软引用。淘汰软引用指向的对象。具体算法和JVM的垃圾回收算法有关
+                d.WEAK：弱引用。淘汰弱引用指向的对象。具体算法和JVM的垃圾回收算法有关
+            2.flushInterval：
+                二级缓存的刷新时间间隔。单位毫秒。如果没有设置，就代表不刷新缓存，只要内存足够大，一直会向二级缓存中缓存数据，除非执行了增删改语句
+            3.readOnly
+                a.true：多条相同的sql语句执行之后返回的对象是共享的同一个。性能好。但是多线程并发可能会存在安全问题
+                b.false：多条相同的sql语句执行之后返回的对象是副本，调用了clone方法。性能一般，但安全
+            4.size
+                设置二级缓存中最多可存储java对象的数量，默认为1024
+    -->
+    <!--<cache />-->
+
+    <!--使用Ehcache集成-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache" />
+
+    <select id="selectById2" resultType="car">
+        select * from t_car where id = #{id}
+    </select>
+
+    <insert id="insertClazz">
+        insert into t_clazz values(#{cid},#{cname})
+    </insert>
+
+    <select id="selectById" resultType="car">
+        select * from t_car where id = #{id}
+    </select>
+</mapper>

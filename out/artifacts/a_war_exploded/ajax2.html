@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsonp实现跨域</title>
+</head>
+<body>
+<script type="text/javascript">
+    /**
+     * 这是我自定义的一个函数
+     */
+    function sayHello(data){
+        //alert("hello js!");
+        alert("hello," + data.name);
+    }
+
+    function sum{
+        alert("求和");
+    }
+</script>
+<!--超链接也可以跨域，但是为什么不用呢？因为超链接会刷新页面，无法做到局部刷新效果-->
+<!--script标签可以是跨域的，src属性可以是js文件，那这个路径可以是一个Servlet路径吗？可以-->
+<!--但是jsonp跨域的时候只支持GET请求！！！，不支持POST请求-->
+<script type="text/javascript" src="http://localhost:8080/b/jsonp1?fun=sayHello"></script>
+</body>
+</html>

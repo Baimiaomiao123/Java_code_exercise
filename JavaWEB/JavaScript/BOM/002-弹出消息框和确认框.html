@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>弹出消息框和确认框</title>
+    <script type="text/javascript">
+      function del(){
+        /*
+        var result = window.confirm("亲，确认删除数据吗？");
+        if(result){
+          alert("delete data......");
+        }
+        */
+        //合并写
+        if(window.confirm('亲，确认删除数据吗？')){
+          alert("delete data....");
+        }
+
+      }
+    </script>
+  </head>
+  <body>
+      <input type="button" value="弹出消息框" onclick="window.alert('消息框');">
+
+      <!--  删除操作的时候都要提前得到用户的确认    -->
+      <input type="button" value="弹出确认框（删除）" onclick="del();"/>
+
+  </body>
+</html>

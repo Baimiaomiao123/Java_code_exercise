@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>先能看懂下面这个代码，再学习AJAX</title>
+</head>
+<body>
+<script type="text/javascript">
+  function sayHello(){
+    alert("hello javascript");
+  }
+</script>
+
+<!--需求：页面上有一个按钮，用户点击按钮之后，执行一段js代码-->
+<input type="button" value="hello" onclick="sayHello()"/> <br>
+
+<!--以上的实现方式，是通过js代码给按钮绑定事件-->
+<input type="button" value="hello2" id="helloBtn"/>
+<script type="text/javascript">
+  //页面加载完毕之后，给id="helloBtn"的元素绑定鼠标单击事件
+  window.onload = function (){ //这个function就是一个回调函数，当这个事件发生的时候，这个回调函数才会执行
+    //获取id="helloBtn"的对象
+    var helloBtn = document.getElementById("helloBtn");
+    //给它绑定click事件
+    helloBtn.onclick = function (){ //这个回调函数会在helloBtn被click的时候执行
+      alert("hello javascript2");
+      alert(this.value); //hello2 //这个this是发生事件的原对象，在这里是helloBtn
+    }
+  }
+</script>
+</body>
+</html>
