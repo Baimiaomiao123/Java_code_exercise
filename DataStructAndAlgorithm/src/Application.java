@@ -112,11 +112,11 @@ public class Application {
         /* LinkedList stores nodes in 2 parts (data + address), where nodes are in non-consecutive memory locations and
             elements are linked using pointers. And we have two types of linked list: singly linked list and doubly linked list
                                Singly Linked List
-               Node                 Node                Node
+               AdjacencyMatrix.Node                 AdjacencyMatrix.Node                AdjacencyMatrix.Node
            [data | address] -> [data | address] -> [data | address]
 
                                Doubly Linked List
-                      Node                             Node
+                      AdjacencyMatrix.Node                             AdjacencyMatrix.Node
            [address | data | address] < - > [address | data | address]
 
             advantages?
@@ -183,6 +183,59 @@ public class Application {
         System.out.println("After removing elements: " + linkedList1);
 
         System.out.println("============================== Dynamic Array ==============================");
-        
+        DynamicArray dynamicArray = new DynamicArray(5);
+
+        // check whether the dynamic array is empty or not
+        System.out.println("empty: " + dynamicArray.isEmpty());
+
+        // add element
+        dynamicArray.add("A");
+        dynamicArray.add("B");
+        dynamicArray.add("C");
+
+        System.out.println("empty: " + dynamicArray.isEmpty());
+
+        // print the dynamic array
+        System.out.println(dynamicArray);
+
+        // access the size and capacity of dynamic array
+        System.out.println("The size of the dynamic array is " + dynamicArray.getSize() +
+                "; The capacity of the dynamic array is " + dynamicArray.getCapacity());
+
+        System.out.println("==============================");
+        // insert the elements by index
+        dynamicArray.insert(0, "X");
+
+        // print the dynamic array
+        System.out.println(dynamicArray);
+
+        // access the size and capacity of dynamic array
+        System.out.println("The size of the dynamic array is " + dynamicArray.getSize() +
+                "; The capacity of the dynamic array is " + dynamicArray.getCapacity());
+
+        dynamicArray.delete("A");
+        // print the dynamic array
+        System.out.println("After deleting the A, the dynamic are " + dynamicArray);
+
+        System.out.println("The index of element C in dynamic array is " + dynamicArray.search("C"));
+
+        // expand the capacity of dynamic array
+        dynamicArray.add("D");
+        dynamicArray.add("E");
+        dynamicArray.add("F");
+
+        System.out.println("After adding three elements into the old array, now the capacity of the new array is " + dynamicArray.getCapacity());
+
+        System.out.println("==============================");
+
+        dynamicArray.delete("D");
+        dynamicArray.delete("E");
+        dynamicArray.delete("F");
+
+        System.out.println("After deleting three elements into the old array, now the capacity of the new array is " + dynamicArray.getCapacity());
+
+
+
+
     }
 }
